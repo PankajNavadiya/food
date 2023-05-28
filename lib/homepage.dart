@@ -9,15 +9,7 @@ class Homepage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(),
-            Container(),
-            Container(),
-              Container(),
-            Container(),
-            Container(),
-              Container(),
-            Container(),
-            Container(),
+            Container()
           ],
         ),
       ),
