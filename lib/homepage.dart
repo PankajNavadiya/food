@@ -9,7 +9,7 @@ class Homepage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(child: Text("venish & pankaj"),)
+            Container(child: Text("venish"),)
           ],
         ),
       ),
