@@ -16,7 +16,9 @@ class RendomPage extends StatelessWidget {
         actions: [
           CupertinoButton(
             child: Icon(Icons.refresh_rounded, color: Colors.white,),
-            onPressed: (){},
+            onPressed: (){
+              showSnackBar(context, 'Data Successfully Update!');
+            },
           )
         ],
         centerTitle: true,
@@ -28,6 +30,14 @@ class RendomPage extends StatelessWidget {
           child: Text("Rendom Page")
         ),
       ),
+    );
+  }
+  void showSnackBar(BuildContext context , String massage){
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(massage, style: TextStyle(fontSize: 17, color: Colors.black),),
+        backgroundColor: Colors.green
+      )
     );
   }
 }
