@@ -7,7 +7,7 @@ import '../../category/model/categoryData.dart';
 import '../model/RandomData.dart';
 
 class HomeController extends GetxController {
-  HomeRepository _homeRepository;
+  final HomeRepository _homeRepository;
 
   HomeController(this._homeRepository);
 
