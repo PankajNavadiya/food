@@ -37,23 +37,27 @@ class RendomPage extends GetView<HomeController> {
         backgroundColor: Colors.blue,
       ),
       body: SafeArea(
-        child: 
-            Obx(
-               () {
-                return Container(height: 500,width: 300,
-                  child: ListView.builder(itemCount: controller.randomItem.length,shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(controller.randomItem[index].strInstructions.toString(),style: TextStyle(color: Colors.black),),
-                        ],
-                      );
-                    },
-                  ),
-                );
-              }
+        child: Obx(() {
+          return ListView.builder(
+        itemCount: controller.randomItem.length,
+        itemBuilder: (context, index) {
+          final item = controller.randomItem[index];
+
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Column(
+                children: [
+                  Text("id - ${item.idMeal}"),
+                  Text("category - ${item.strCategory}"),
+                  Text("area - ${item.strArea}")
+                ],
+              ),
             ),
-       
+          );
+        },
+      );
+        }),
       ),
     );
   }

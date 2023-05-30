@@ -14,6 +14,11 @@ class HomeRepository extends BaseRepository{
     return await processResult(await _provider.getRandom(request));
   }
 
+    Future getCategoryCall({request}) async {
+    debugPrint("Request ******>$request");
+    return await processResult(await _provider.getCategory(request));
+  }
+
   // Future addSavedJobCall({request}) async {
   //   debugPrint("Request ******>$request");
   //   return await processResult(await _provider.addSavedJob(request));
