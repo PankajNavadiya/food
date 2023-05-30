@@ -45,6 +45,7 @@ class RendomPage extends GetView<HomeController> {
                     itemBuilder: (context, index) {
                       return Column(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          Text(controller.randomItem[index].strMeal.toString(),style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold)),
                           Text(controller.randomItem[index].strInstructions.toString(),style: TextStyle(color: Colors.black),),
                         ],
                       );
