@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:food/repos/home_repository.dart';
 import 'package:food/utils/app_utils.dart';
@@ -59,7 +61,7 @@ class HomeController extends GetxController {
     });
   }
 
-  randomDataInsert(
+  Future<void> randomDataInsert(
     String rId,
     String rMeal,
     String rCategory,
@@ -111,57 +113,68 @@ class HomeController extends GetxController {
     String rMeasure20,
   ) async {
     // insert record into firebase
-    // await FirebaseFirestore.instance.collection("users").add({
-    //  "rId"= rId,
-    //  "rMeal"= rMeal,
-    //  "rCategory"= rCategory,
-    //  "rArea"= rArea,
-    //  "rInstruction"= rInstruction,
-    //  "rImage"= rImage,
-    //  "rTags"= rTags,
-    //  "rYoutube"= rYoutube,
-    //  "rSource"= rSource,
-    //  "rIngredient1"= rIngredient1,
-    //  "rIngredient2"= rIngredient2,
-    //  "rIngredient3"= rIngredient3,
-    //  "rIngredient4"= rIngredient4,
-    //  "rIngredient5"= rIngredient5,
-    //  "rIngredient6"= rIngredient6,
-    //  "rIngredient7"= rIngredient7,
-    //  "rIngredient8"= rIngredient8,
-    //  "rIngredient9"= rIngredient9,
-    //  "rIngredient10"= rIngredient10,
-    //  "rIngredient11"= rIngredient11,
-    //  "rIngredient12"= rIngredient12,
-    //  "rIngredient13"= rIngredient13,
-    //  "rIngredient14"= rIngredient14,
-    //  "rIngredient15"= rIngredient15,
-    //  "rIngredient16"= rIngredient16,
-    //  "rIngredient17"= rIngredient17,
-    //  "rIngredient18"= rIngredient18,
-    //  "rIngredient19"= rIngredient19,
-    //  "rIngredient20"= rIngredient20,
-    //  "rMeasure1"= rMeasure1,
-    //  "rMeasure2"= rMeasure2,
-    //  "rMeasure3"= rMeasure3,
-    //  "rMeasure4"= rMeasure4,
-    //  "rMeasure5"= rMeasure5,
-    //  "rMeasure6"= rMeasure6,
-    //  "rMeasure7"= rMeasure7,
-    //  "rMeasure8"= rMeasure8,
-    //  "rMeasure9"= rMeasure9,
-    //  "rMeasure10"= rMeasure10,
-    //  "rMeasure11"= rMeasure11,
-    //  "rMeasure12"= rMeasure12,
-    //  "rMeasure13"= rMeasure13,
-    //  "rMeasure14"= rMeasure14,
-    //  "rMeasure15"= rMeasure15,
-    //  "rMeasure16"= rMeasure16,
-    //  "rMeasure17"= rMeasure17,
-    //  "rMeasure18"= rMeasure18,
-    //  "rMeasure19"= rMeasure19,
-    //  "rMeasure20"= rMeasure20
-    // });
+    await FirebaseFirestore.instance.collection("fooddata").add({
+     "rId" : FieldValue.increment(1),
+     "rMeal" : rMeal,
+     "rCategory" : rCategory,
+     "rArea" : rArea,
+     "rInstruction" : rInstruction,
+     "rImage" : rImage,
+     "rTags" : rTags,
+     "rYoutube" : rYoutube,
+     "rSource" : rSource,
+     "rIngredient1" : rIngredient1,
+     "rIngredient2" : rIngredient2,
+     "rIngredient3" : rIngredient3,
+     "rIngredient4" : rIngredient4,
+     "rIngredient5" : rIngredient5,
+     "rIngredient6" : rIngredient6,
+     "rIngredient7" : rIngredient7,
+     "rIngredient8" : rIngredient8,
+     "rIngredient9" : rIngredient9,
+     "rIngredient10" : rIngredient10,
+     "rIngredient11" : rIngredient11,
+     "rIngredient12" : rIngredient12,
+     "rIngredient13" : rIngredient13,
+     "rIngredient14" : rIngredient14,
+     "rIngredient15" : rIngredient15,
+     "rIngredient16" : rIngredient16,
+     "rIngredient17" : rIngredient17,
+     "rIngredient18" : rIngredient18,
+     "rIngredient19" : rIngredient19,
+     "rIngredient20" : rIngredient20,
+     "rMeasure1" : rMeasure1,
+     "rMeasure2" : rMeasure2,
+     "rMeasure3" : rMeasure3,
+     "rMeasure4" : rMeasure4,
+     "rMeasure5" : rMeasure5,
+     "rMeasure6" : rMeasure6,
+     "rMeasure7" : rMeasure7,
+     "rMeasure8" : rMeasure8,
+     "rMeasure9" : rMeasure9,
+     "rMeasure10" : rMeasure10,
+     "rMeasure11" : rMeasure11,
+     "rMeasure12" : rMeasure12,
+     "rMeasure13" : rMeasure13,
+     "rMeasure14" : rMeasure14,
+     "rMeasure15" : rMeasure15,
+     "rMeasure16" : rMeasure16,
+     "rMeasure17" : rMeasure17,
+     "rMeasure18" : rMeasure18,
+     "rMeasure19" : rMeasure19,
+     "rMeasure20" : rMeasure20
+    });
+  }
+
+  Future<void> insert(int eid, String ename, String ecity, int esalary)
+  async {
+    // insert record into firebase
+    await FirebaseFirestore.instance.collection("users").add({
+    	'eid': eid,
+      'ename': ename,
+      'ecity': ecity,
+      'esalary': esalary
+	  });
   }
 
   getCategoryDataCall() async {
