@@ -21,6 +21,9 @@ class HomeProvider extends GetConnect{
 
   Future<Response> getRandom(request) async => await post('random.php',request);
 
+    Future<Response> getCategory(request) async => await post('categories.php',request);
+
+
  // Future<Response> addApplyJob(request) async => await post('job/ApplyJob',request);
 
 
