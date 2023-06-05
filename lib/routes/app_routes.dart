@@ -8,7 +8,7 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const SPLASH = _Paths.SPLASH;
   static const INTRO = _Paths.INTRO;
-  static const LOGIN = _Paths.LOGIN;
+  static const CATEGORY = _Paths.CATEGORY;
   static const SIGNUP = _Paths.SIGNUP;
   static const FORGOT = _Paths.FORGOT;
   static const VERIFYOTP = _Paths.VERIFYOTP;
@@ -49,7 +49,7 @@ abstract class _Paths {
   static const HOME = '/home';
   static const SPLASH = '/splash';
   static const INTRO = '/intro';
-  static const LOGIN = '/login';
+  static const CATEGORY = '/category';
   static const SIGNUP = '/signup';
   static const FORGOT = '/forgot';
   static const VERIFYOTP = '/verify-otp';

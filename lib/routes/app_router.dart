@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-
 import 'app_page.dart';
 
 class AppRouter {
@@ -7,9 +6,9 @@ class AppRouter {
     Get.offAllNamed(Routes.HOME);
   }
 
-  // static signup() {
-  //   Get.toNamed(Routes.SIGNUP);
-  // }
+  static category() {
+    Get.toNamed(Routes.CATEGORY);
+  }
 
   // static forgot() {
   //   Get.toNamed(Routes.FORGOT);

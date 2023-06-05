@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import '../rendom.dart';
 import '../ui/Random/binding/Randombinding.dart';
 import '../ui/category/binding/categorybinding.dart';
+import '../ui/home/binding/Randombinding.dart';
 
 part 'app_routes.dart';
 
@@ -26,10 +27,10 @@ class AppPages {
     GetPage(
       name: _Paths.INTRO,
       page: () => const Homepage(),
-      binding: HomeBinding(),
+     // binding: MainHomeBinding(),
     ),
     GetPage(
-      name: _Paths.HOME,
+      name: _Paths.CATEGORY,
       page: () => const CatogaryPage(),
       binding: CategoryBinding(),
     ),
